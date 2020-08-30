@@ -2,7 +2,7 @@
 输入一个问句，从候选库中找出与之相似的问题。
 '''
 from gensim import matutils
-from numpy import dot
+from numpy import dot       #dot计算两个句子相似度乘积
 
 from libs.model_build import get_vec_sen, get_vec_sen_list
 from libs.read_utils import get_libs, load_word2vec_model
