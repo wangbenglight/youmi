@@ -33,15 +33,15 @@ def get_txt_libs(file):
 def get_libs(excel_file):
     '''获取excel文件响应库'''
     libs = []
-    inputbook = xlrd.open_workbook(excel_file)
-    excel_sheet = inputbook.sheet_by_index(0)
+    inputbook = xlrd.open_workbook(excel_file)    #xlrd模块，打开xlsx文件用的
+    excel_sheet = inputbook.sheet_by_index(0)     #通过标题索引 
     n = excel_sheet.nrows
     print("库问题数量:%s" % n)
     for i in range(1, n):
-        row_data = excel_sheet.row_values(i)
+        row_data = excel_sheet.row_values(i)      #获得sheel每一行的内容，类型是列表形式
         response = str(row_data[0])
         libs.append(response)
-    return libs
+    return libs               #返回值为 列表 包含每个句子的列表
 
 def get_QAs(text_file):
     QAs = []
