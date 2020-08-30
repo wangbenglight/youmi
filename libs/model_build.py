@@ -56,7 +56,7 @@ def get_vec_sen(sentence, models, size):
     '''获得：语义向量, 字向量求和'''
     sentence = sentence.strip()  # 去除前后空格及换行符
     sens = str2split(sentence)
-    vector = zeros((size), dtype=float32)
+    vector = zeros((size), dtype=float32) #预先留500维的数组向量
 
     for w in sens:
         if isinstance(w, list):  # 对数字单独处理
